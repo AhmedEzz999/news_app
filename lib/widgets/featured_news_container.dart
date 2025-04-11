@@ -1,0 +1,32 @@
+import 'package:flutter/material.dart';
+import 'package:news_app/models/featured_news_model.dart';
+
+class FeaturedNewsContainer extends StatelessWidget {
+  const FeaturedNewsContainer({super.key, required this.featuredNews});
+  final FeaturedNewsModel featuredNews;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(right: 20),
+      width: 177,
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(featuredNews.image),
+          fit: BoxFit.fill
+          ),
+        borderRadius: BorderRadius.circular(10)
+      ),
+      child: Center(
+        child: Text(
+          featuredNews.text,
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 25,
+            fontWeight: FontWeight.bold
+          ),
+        ),
+      ),
+    );
+  }
+}
