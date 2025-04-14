@@ -11,7 +11,7 @@ class FeaturedNewsSection extends StatelessWidget {
     ),
     FeaturedNewsModel(
       text: 'Sports',
-      image: 'assets/sports.avif'
+      image: 'assets/sports.jpg'
     ),
     FeaturedNewsModel(
       text: 'Science',

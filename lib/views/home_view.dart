@@ -9,6 +9,8 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          scrolledUnderElevation: 0,
+          backgroundColor: Colors.white,
           centerTitle: true,
           title:
             RichText(
@@ -22,9 +24,7 @@ class HomeView extends StatelessWidget {
               children: [
                 TextSpan(
                   text: 'Cloud',
-                  style: TextStyle(
-                    color: Colors.orange,
-                  )
+                  style: TextStyle(color: Colors.orange)
                 )
               ]
               ),
@@ -34,13 +34,12 @@ class HomeView extends StatelessWidget {
         SafeArea(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Column(
-              children: [
-                FeaturedNewsSection(),
-                SizedBox(
-                  height: 30,
-                ),
-                NewsListSection()
+            child: 
+            CustomScrollView(
+              slivers: [
+                SliverToBoxAdapter(child: FeaturedNewsSection()),
+                SliverToBoxAdapter(child: const SizedBox(height: 30)),
+                NewsListSection(),
               ],
             ),
           ),
