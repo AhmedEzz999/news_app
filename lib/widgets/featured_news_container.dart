@@ -8,7 +8,7 @@ class FeaturedNewsContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(right: 20),
+      margin: const EdgeInsets.only(right: 20),
       width: 177,
       decoration: BoxDecoration(
         image: DecorationImage(
@@ -20,7 +20,7 @@ class FeaturedNewsContainer extends StatelessWidget {
       child: Center(
         child: Text(
           featuredNews.text,
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.white,
             fontSize: 25,
             fontWeight: FontWeight.bold

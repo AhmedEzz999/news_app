@@ -20,13 +20,13 @@ class NewsListContainer extends StatelessWidget {
               articleModel.title,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
-              style: TextStyle(fontSize: 18),
+              style: const TextStyle(fontSize: 18),
             ),
             const SizedBox(height: 8),
             Text(
               articleModel.subTitle,
               maxLines: 2,
-              style: TextStyle(fontSize: 16, color: Colors.grey),
+              style: const TextStyle(fontSize: 16, color: Colors.grey),
             )
         ],
       ),

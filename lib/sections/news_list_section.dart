@@ -26,8 +26,8 @@ class _NewsListSectionState extends State<NewsListSection> {
       future: futureArticles,
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return SliverToBoxAdapter(
-            child: Center(child: CircularProgressIndicator()),
+          return const SliverFillRemaining(
+            child:  Center(child: CircularProgressIndicator()),
           );
         } else if (snapshot.connectionState == ConnectionState.done) {
           if (snapshot.hasError) {
@@ -45,12 +45,12 @@ class _NewsListSectionState extends State<NewsListSection> {
               ),
             );
           } else {
-            return SliverToBoxAdapter(
+            return const SliverToBoxAdapter(
               child: Center(child: Text('No data available')),
             );
           }
         } else {
-          return SliverToBoxAdapter(
+          return const SliverToBoxAdapter(
             child: Center(child: Text('Loading...')),
           );
         }
