@@ -17,7 +17,7 @@ class _NewsListSectionState extends State<NewsListSection> {
   @override
   void initState() {
     super.initState();
-    futureArticles = NewsService(Dio()).getGeneralNews();
+    futureArticles = NewsService(Dio()).getNews();
   }
 
   @override
@@ -27,7 +27,7 @@ class _NewsListSectionState extends State<NewsListSection> {
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const SliverFillRemaining(
-            child:  Center(child: CircularProgressIndicator()),
+            child: Center(child: CircularProgressIndicator()),
           );
         } else if (snapshot.connectionState == ConnectionState.done) {
           if (snapshot.hasError) {
@@ -38,10 +38,10 @@ class _NewsListSectionState extends State<NewsListSection> {
             final articles = snapshot.data!;
             return SliverList(
               delegate: SliverChildBuilderDelegate(
+                childCount: articles.length,
                 (context, index) {
                   return NewsListContainer(articleModel: articles[index]);
                 },
-                childCount: articles.length,
               ),
             );
           } else {
