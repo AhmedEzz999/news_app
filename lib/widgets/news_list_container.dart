@@ -13,21 +13,21 @@ class NewsListContainer extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(18),
-            child: Image.network(articleModel.imageSource)
-            ),
-            const SizedBox(height: 10),
-            Text(
-              articleModel.title,
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-              style: const TextStyle(fontSize: 18),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              articleModel.subTitle,
-              maxLines: 2,
-              style: const TextStyle(fontSize: 16, color: Colors.grey),
-            )
+            child: Image.network(articleModel.imageSource),
+          ),
+          const SizedBox(height: 10),
+          Text(
+            articleModel.title,
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+            style: const TextStyle(fontSize: 18),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            articleModel.subTitle,
+            maxLines: 2,
+            style: const TextStyle(fontSize: 16, color: Colors.grey),
+          ),
         ],
       ),
     );

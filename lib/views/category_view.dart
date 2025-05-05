@@ -23,7 +23,11 @@ class _CategoryViewState extends State<CategoryView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Category')),
+      appBar: AppBar(
+        title: Text(
+          '${widget.category[0].toUpperCase()}${widget.category.substring(1)} News',
+        ),
+      ),
       body: FutureBuilder<List<ArticleModel>>(
         future: categoryNews,
         builder: (context, snapshot) {
