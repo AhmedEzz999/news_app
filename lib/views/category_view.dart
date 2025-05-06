@@ -23,7 +23,10 @@ class _CategoryViewState extends State<CategoryView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        scrolledUnderElevation: 0,
+        backgroundColor: Colors.white,
         title: Text(
           '${widget.category[0].toUpperCase()}${widget.category.substring(1)} News',
         ),
@@ -39,6 +42,7 @@ class _CategoryViewState extends State<CategoryView> {
             } else if (snapshot.hasData) {
               final articles = snapshot.data!;
               return ListView.builder(
+                physics: const BouncingScrollPhysics(),
                 itemCount: articles.length,
                 itemBuilder: (context, index) {
                   return Container(
