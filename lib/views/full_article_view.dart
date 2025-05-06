@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/models/article_model.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class FullArticleView extends StatelessWidget {
   const FullArticleView({super.key, required this.article});
   final ArticleModel article;
+  Uri get url => Uri.parse(article.fullArticle);
+
+  Future<void> _launchUrl() async {
+    if (!await launchUrl(url)) {
+      throw Exception('Could not launch $url');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,9 +45,17 @@ class FullArticleView extends StatelessWidget {
                 style: const TextStyle(fontSize: 20),
                 textAlign: TextAlign.justify,
               ),
+              const SizedBox(height: 15),
+              Text(
+                'Source: ${article.source}',
+                style: const TextStyle(fontSize: 25),
+              ),
               TextButton(
-                onPressed: () {},
-                child: const Text('Source', style: TextStyle(fontSize: 27)),
+                onPressed: _launchUrl,
+                child: const Text(
+                  'Full Article',
+                  style: TextStyle(fontSize: 27),
+                ),
               ),
             ],
           ),
