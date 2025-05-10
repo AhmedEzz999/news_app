@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:news_app/models/article_model.dart';
 import 'package:news_app/views/full_article_view.dart';
 
-class NewsListContainer extends StatelessWidget {
-  const NewsListContainer({super.key, required this.articleModel});
+class NewsContainer extends StatelessWidget {
+  const NewsContainer({super.key, required this.articleModel});
   final ArticleModel articleModel;
 
   @override

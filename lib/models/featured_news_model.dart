@@ -1,9 +1,9 @@
-class FeaturedNewsModel {
+class CategoryModel {
   final String text;
   final String image;
   final String category;
 
-  const FeaturedNewsModel({
+  const CategoryModel({
     required this.text,
     required this.image,
     required this.category,

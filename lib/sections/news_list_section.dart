@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/models/article_model.dart';
 import 'package:news_app/services/news_service.dart';
-import 'package:news_app/widgets/news_list_container.dart';
+import 'package:news_app/widgets/news_container.dart';
 
 class NewsListSection extends StatefulWidget {
   const NewsListSection({super.key});
@@ -40,7 +40,7 @@ class _NewsListSectionState extends State<NewsListSection> {
               delegate: SliverChildBuilderDelegate(
                 childCount: articles.length,
                 (context, index) {
-                  return NewsListContainer(articleModel: articles[index]);
+                  return NewsContainer(articleModel: articles[index]);
                 },
               ),
             );

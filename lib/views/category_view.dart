@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/models/article_model.dart';
 import 'package:news_app/services/news_service.dart';
-import 'package:news_app/widgets/news_list_container.dart';
+import 'package:news_app/widgets/news_container.dart';
 
 class CategoryView extends StatefulWidget {
   final String category;
@@ -48,7 +48,7 @@ class _CategoryViewState extends State<CategoryView> {
                   return Container(
                     margin: const EdgeInsets.only(bottom: 10),
                     padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: NewsListContainer(articleModel: articles[index]),
+                    child: NewsContainer(articleModel: articles[index]),
                   );
                 },
               );

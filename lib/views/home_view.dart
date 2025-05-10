@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/sections/featured_news_section.dart';
+import 'package:news_app/sections/category_section.dart';
 import 'package:news_app/sections/news_list_section.dart';
 
 class HomeView extends StatelessWidget {
@@ -33,7 +33,7 @@ class HomeView extends StatelessWidget {
           child: CustomScrollView(
             physics: BouncingScrollPhysics(),
             slivers: [
-              SliverToBoxAdapter(child: FeaturedNewsSection()),
+              SliverToBoxAdapter(child: CategorySection()),
               SliverToBoxAdapter(child: SizedBox(height: 30)),
               NewsListSection(),
             ],
