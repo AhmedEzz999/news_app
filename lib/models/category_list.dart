@@ -1,4 +1,4 @@
-import 'package:news_app/models/featured_news_model.dart';
+import 'package:news_app/models/category_model.dart';
 
 const List<CategoryModel> categoryList = [
   CategoryModel(
