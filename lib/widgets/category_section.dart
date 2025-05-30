@@ -13,9 +13,7 @@ class CategorySection extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: categoryList.length,
         itemBuilder: (context, index) {
-          return CategoryContainer(
-            categoryModel: categoryList[index],
-          );
+          return CategoryContainer(categoryModel: categoryList[index]);
         },
       ),
     );

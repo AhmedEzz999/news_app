@@ -2,16 +2,16 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/models/article_model.dart';
 import 'package:news_app/services/news_service.dart';
-import 'package:news_app/widgets/news_container.dart';
+import 'package:news_app/widgets/news_builder.dart';
 
-class NewsListSection extends StatefulWidget {
-  const NewsListSection({super.key});
+class NewsListBuilder extends StatefulWidget {
+  const NewsListBuilder({super.key});
 
   @override
-  State<NewsListSection> createState() => _NewsListSectionState();
+  State<NewsListBuilder> createState() => _NewsListBuilderState();
 }
 
-class _NewsListSectionState extends State<NewsListSection> {
+class _NewsListBuilderState extends State<NewsListBuilder> {
   late Future<List<ArticleModel>> futureArticles;
 
   @override
@@ -36,14 +36,7 @@ class _NewsListSectionState extends State<NewsListSection> {
             );
           } else if (snapshot.hasData) {
             final articles = snapshot.data!;
-            return SliverList(
-              delegate: SliverChildBuilderDelegate(
-                childCount: articles.length,
-                (context, index) {
-                  return NewsContainer(articleModel: articles[index]);
-                },
-              ),
-            );
+            return NewsBuilder(articles: articles);
           } else {
             return const SliverToBoxAdapter(
               child: Center(child: Text('No data available')),
