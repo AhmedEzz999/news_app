@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:news_app/cubits/get_category_news_cubit/get_category_news_cubit.dart';
 import 'package:news_app/models/category_model.dart';
 import 'package:news_app/views/category_view.dart';
 
@@ -14,7 +16,10 @@ class CategoryContainer extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) {
-              return CategoryView(category: categoryModel.category);
+              return BlocProvider(
+                create: (context) => GetCategoryNewsCubit(),
+                child: CategoryView(category: categoryModel.category),
+              );
             },
           ),
         );
